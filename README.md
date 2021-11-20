@@ -20,3 +20,5 @@ This application is used to predict a possible price for a second hand motorbike
 ![s3](https://user-images.githubusercontent.com/64016811/142727701-6fa231d6-ea23-4de7-9587-808a86e5ec9f.png)
 ![s4](https://user-images.githubusercontent.com/64016811/142727706-e1fff9ac-33a8-407d-aeec-6c9c55216705.png)
 
+### Output:
+![image](https://user-images.githubusercontent.com/64016811/142728185-7bab36a6-8489-4320-a4ca-025cd7839e79.png)
