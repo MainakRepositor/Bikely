@@ -85,7 +85,7 @@ elif nav == "Prediction":
     dfx = df3.sort_values('data')
     dfx = dfx.drop_duplicates()
     dfx.reset_index(drop=True, inplace=True)
-    st.markdown("### Choose a brand id from the brand list given below, by pressing on the + button")
+    st.markdown("##### Choose a brand id from the brand list given below, by pressing on the + button")
     dfx.rename(columns={'data1': 'Bike Brand','data':'Brand ID'}, inplace=True)
     st.dataframe(dfx)
 
