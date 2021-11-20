@@ -17,7 +17,7 @@ lr = LinearRegression()
 Z = data[['power', 'age', 'kms_driven','stroke','brand']]
 lr.fit(Z, data['price'])
 
-
+st.markdown("Made by [Mainak](https://www.linkedin.com/in/mainak-chaudhuri-127898176/)")
 
 nav = st.sidebar.radio("Sections",["Home","Prediction"])
 
