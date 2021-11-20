@@ -69,7 +69,7 @@ if nav == "Home":
 
 
 elif nav == "Prediction":
-    st.image("money.jpg",width= 1200)
+    st.image("money.jpg",width= 800)
     st.header("Know your Bike Price")
     val1 = st.number_input("Enter your Bike's Horsepower",100,2000,step = 3)
     val2 = st.number_input("Enter your Bike's Age (years)",1,40,step = 5)
