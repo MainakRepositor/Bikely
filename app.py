@@ -17,7 +17,7 @@ lr = LinearRegression()
 Z = data[['power', 'age', 'kms_driven','stroke','brand']]
 lr.fit(Z, data['price'])
 
-st.markdown("Made by [Mainak](https://www.linkedin.com/in/mainak-chaudhuri-127898176/)")
+
 
 nav = st.sidebar.radio("Sections",["Home","Prediction"])
 
@@ -65,7 +65,7 @@ if nav == "Home":
         plt.ylabel("Price")
         st.pyplot(ax)            
 
-   
+st.markdown("Made by [Mainak](https://www.linkedin.com/in/mainak-chaudhuri-127898176/)")  
 
 
 elif nav == "Prediction":
@@ -95,4 +95,4 @@ elif nav == "Prediction":
     if st.button("Predict"):
         st.success(f"Your predicted motorbike price is Rs. {pred}")
 
-
+st.markdown("Made by [Mainak](https://www.linkedin.com/in/mainak-chaudhuri-127898176/)")
