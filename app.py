@@ -71,9 +71,9 @@ if nav == "Home":
 elif nav == "Prediction":
     st.image("money.jpg",width= 800)
     st.header("Know your Bike Price")
-    val1 = st.number_input("Enter your Bike's Horsepower",100,2000,step = 3)
-    val2 = st.number_input("Enter your Bike's Age (years)",1,40,step = 5)
-    val3 = st.number_input("Enter your Bike's Kilometers Travelled (in 1000 km)",1,50,step = 2)
+    val1 = st.number_input("Enter your Bike's Horsepower",100,2000,step = 100)
+    val2 = st.number_input("Enter your Bike's Age (years)",1,40,step = 1)
+    val3 = st.number_input("Enter your Bike's Kilometers Travelled (in 1000 km)",1,50,step = 1)
     val4 = st.number_input("Enter your Bike's Stroke",1,5,step = 1)
     val5 = st.number_input("Enter your Bike's Brand",0,22,step = 1)
 
