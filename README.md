@@ -12,7 +12,7 @@ This application is used to predict a possible price for a second hand motorbike
 ### Tech Stack:
 - Python 3.9 for logic development
 - Streamlit for UI integrations
-- shar.streamlit.io for hosting
+- share.streamlit.io for hosting
 
 ### Screenshots:
 ![s1](https://user-images.githubusercontent.com/64016811/142727696-6b0b81da-5cb2-4d11-b1cf-a20f484d6ca2.png)
