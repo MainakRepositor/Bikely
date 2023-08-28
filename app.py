@@ -20,7 +20,7 @@ lr.fit(Z, data['price'])
 
 
 nav = st.sidebar.radio("Sections",["Home","Prediction"])
-st.sidebar.markdown("Made by [Mainak](https://www.linkedin.com/in/mainak-chaudhuri-127898176/)")  
+
 if nav == "Home":
     st.image("bike.jpg",width= 700)
     if st.checkbox("Show Dataset"):
