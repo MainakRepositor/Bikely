@@ -93,6 +93,6 @@ elif nav == "Prediction":
     pred = lr.predict(val)[0]
     pred = round(pred)
     if st.button("Predict"):
-        st.success(f"Your predicted bike share price is Rs. {pred}")
+        st.success(f"Your predicted bike share price for this year is Rs. {pred}")
 
 
