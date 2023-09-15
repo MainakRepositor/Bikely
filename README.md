@@ -1,9 +1,9 @@
 # Bikely
 
-## Predict the price of a second hand motorbike.
+## Predict the price of a rental motorbike.
 
 ### Idea:
-This application is used to predict a possible price for a second hand motorbike in India. The application uses a preloaded bikes data which spans across 30k plus data samples of used bikes and their prices of sell, 23 companies and multiple features to decide the best possible price. 
+This application is used to predict a possible price for a rental motorbike in India. The application uses a preloaded bikes data which spans across 30k plus data samples of used bikes and their prices of sell, 23 companies and multiple features to decide the best possible price. 
 
 ### Architecture
 ![image](https://user-images.githubusercontent.com/64016811/142728024-9970d51e-1095-4edf-a47c-5fd391bb4f02.png)
