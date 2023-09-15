@@ -6,16 +6,14 @@ from matplotlib import pyplot as plt
 from sklearn.linear_model import LinearRegression
 from sklearn import preprocessing
 
-st.title("Used Motorbike Price Prediction")
+st.title("Bike Rental Rate Prediction")
 
 data = pd.read_csv("bikes.csv")
 data1 = data.copy()
 label_encoder = preprocessing.LabelEncoder()
-data['brand']= label_encoder.fit_transform(data['brand'])
-data['brand'].unique()
 lr = LinearRegression()
-Z = data[['power', 'age', 'kms_driven','stroke','brand']]
-lr.fit(Z, data['price'])
+Z = data[['base_price','kms_driven','age','power','stroke','milage','length','weight','acceleration','brand']]
+lr.fit(Z, data['rent'])
 
 
 
@@ -32,7 +30,7 @@ if nav == "Home":
     if feature == "power":
         st.subheader("Horsepower vs price")
         ax = plt.figure(figsize= (10,5))
-        plt.scatter(data["power"],data["price"])
+        plt.scatter(data["power"],data["rent"])
         plt.ylim(0)
         plt.xlabel("Horsepower")
         plt.ylabel("Price")
@@ -41,7 +39,7 @@ if nav == "Home":
     elif feature == "age":
         st.subheader("Age vs Price")
         ax = plt.figure(figsize= (10,5))
-        plt.scatter(data["age"],data["price"])
+        plt.scatter(data["age"],data["rent"])
         plt.ylim(0)
         plt.xlabel("Age")
         plt.ylabel("Price")
@@ -50,7 +48,7 @@ if nav == "Home":
     elif feature == "kms_driven":
         st.subheader("Kilometers Driven vs Price")
         ax = plt.figure(figsize= (10,5))
-        plt.scatter(data["kms_driven"],data["price"])
+        plt.scatter(data["kms_driven"],data["rent"])
         plt.ylim(0)
         plt.xlabel("Kilometers Driven")
         plt.ylabel("Price")
@@ -59,7 +57,7 @@ if nav == "Home":
     elif feature == "stroke":
         st.subheader("Stroke vs Price")
         ax = plt.figure(figsize= (10,5))
-        plt.scatter(data["stroke"],data["price"])
+        plt.scatter(data["stroke"],data["rent"])
         plt.ylim(0)
         plt.xlabel("Stroke")
         plt.ylabel("Price")
@@ -70,29 +68,29 @@ if nav == "Home":
 
 elif nav == "Prediction":
     st.image("money.jpg",width= 800)
-    st.header("Know your Bike Price")
-    val1 = st.number_input("Enter your Bike's Horsepower",100,2000,step = 100)
-    val2 = st.number_input("Enter your Bike's Age (years)",1,40,step = 1)
-    val3 = st.number_input("Enter your Bike's Kilometers Travelled (in 1000 km)",1,50,step = 1)
-    val4 = st.number_input("Enter your Bike's Stroke",1,5,step = 1)
-    val5 = st.number_input("Enter your Bike's Brand",0,22,step = 1)
-
-    val = np.array([val1,val2,val3,val4,val5]).reshape(1,-1)
+    st.header("Estimate your Bike Rent")
     
-    datax = [data1["brand"], data["brand"]]
-    headers = ["data1", "data"]
-    df3 = pd.concat(datax, axis=1, keys=headers)
-    dfx = df3.sort_values('data')
-    dfx = dfx.drop_duplicates()
-    dfx.reset_index(drop=True, inplace=True)
-    st.markdown("##### Choose a brand id from the brand list given below, by pressing on the + button. For eg. BMW corresponds to Id : 0")
-    dfx.rename(columns={'data1': 'Bike Brand','data':'Brand ID'}, inplace=True)
-    st.dataframe(dfx)
+    base_price = st.slider("Base Price (in Rs.)", float(data["base_price"].min()), float(data["base_price"].max()))
+    kms_driven = st.slider("kms driven", int(data["kms_driven"].min()), int(data["kms_driven"].max()))
+    age = st.slider("Age", int(data["age"].min()), int(data["age"].max()))
+    power = st.slider("Horsepower", int(data["power"].min()), int(data["power"].max()))
+    stroke = st.slider("Number of strokes", int(data["stroke"].min()), int(data["stroke"].max()))
+    milage = st.slider("Milage", int(data["milage"].min()), int(data["milage"].max()))
+    length = st.slider("Length", int(data["length"].min()), int(data["length"].max()))
+    weight = st.slider("Weight", int(data["weight"].min()), int(data["weight"].max()))
+    acceleration = st.slider("Acceleration", int(data["acceleration"].min()), int(data["acceleration"].max()))
+    brand = st.slider("Bike Brand", int(data["brand"].min()), int(data["brand"].max()))
+
+    val = np.array([base_price,kms_driven,age,power,stroke,milage,length,weight,acceleration,brand]).reshape(1,-1)
+    
+    data_brands = pd.read_csv('bike_brands.csv')
+    st.sidebar.info("Bike Brands Available")
+    st.sidebar.table(data_brands['brand'].unique())
 
 
     pred = lr.predict(val)[0]
     pred = round(pred)
     if st.button("Predict"):
-        st.success(f"Your predicted bike share price for this year is Rs. {pred}")
+        st.success(f"Your predicted bike share price for this month is Rs. {pred}")
 
 
