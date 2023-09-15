@@ -23,8 +23,3 @@ This application is used to predict a possible price for a second hand motorbike
 ### Output:
 ![image](https://user-images.githubusercontent.com/64016811/142728185-7bab36a6-8489-4320-a4ca-025cd7839e79.png)
 
-
-### Project Logs: 
-| Name of Creator | Start Date | End Date | Duration | Project Type | Deploy |
-|-----------------|------------|----------|----------|--------------|--------|
-| Mainak Chaudhuri | 30-11-2021 | 5-12-2021 | 6 days | GUI, DBMS | TRUE |
